@@ -1,0 +1,16 @@
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\crud_wf_camadas.exe.config
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\crud_wf_camadas.exe
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\crud_wf_camadas.pdb
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\Google.Protobuf.dll
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\MySql.Data.dll
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\Google.Protobuf.xml
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\bin\Debug\MySql.Data.xml
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.csprojAssemblyReference.cache
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.Form1.resources
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.Properties.Resources.resources
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.csproj.GenerateResource.cache
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.csproj.CoreCompileInputs.cache
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.csproj.CopyComplete
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.exe
+C:\Users\Diego\source\repos\crud_wf_camadas\crud_wf_camadas\obj\Debug\crud_wf_camadas.pdb
