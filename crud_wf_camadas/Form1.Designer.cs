@@ -34,9 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCelular = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbxSexo = new System.Windows.Forms.ComboBox();
             this.cbxUF = new System.Windows.Forms.ComboBox();
+            this.mtbTel = new System.Windows.Forms.MaskedTextBox();
+            this.mtbCel = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,28 +103,14 @@
             this.txtNome.Size = new System.Drawing.Size(287, 20);
             this.txtNome.TabIndex = 5;
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(73, 109);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(161, 20);
-            this.txtTelefone.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 112);
+            this.label5.Location = new System.Drawing.Point(202, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Celular:";
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(301, 109);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(161, 20);
-            this.txtCelular.TabIndex = 8;
             // 
             // label6
             // 
@@ -169,7 +155,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(480, 112);
+            this.label8.Location = new System.Drawing.Point(387, 116);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 13);
             this.label8.TabIndex = 14;
@@ -214,6 +200,9 @@
             // cbxSexo
             // 
             this.cbxSexo.FormattingEnabled = true;
+            this.cbxSexo.Items.AddRange(new object[] {
+            "F",
+            "M"});
             this.cbxSexo.Location = new System.Drawing.Point(417, 64);
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(121, 21);
@@ -222,16 +211,64 @@
             // cbxUF
             // 
             this.cbxUF.FormattingEnabled = true;
-            this.cbxUF.Location = new System.Drawing.Point(510, 108);
+            this.cbxUF.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cbxUF.Location = new System.Drawing.Point(417, 112);
             this.cbxUF.Name = "cbxUF";
             this.cbxUF.Size = new System.Drawing.Size(121, 21);
             this.cbxUF.TabIndex = 20;
+            // 
+            // mtbTel
+            // 
+            this.mtbTel.Location = new System.Drawing.Point(73, 109);
+            this.mtbTel.Mask = "(00) 0000-0000";
+            this.mtbTel.Name = "mtbTel";
+            this.mtbTel.Size = new System.Drawing.Size(110, 20);
+            this.mtbTel.TabIndex = 21;
+            this.mtbTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mtbCel
+            // 
+            this.mtbCel.Location = new System.Drawing.Point(250, 112);
+            this.mtbCel.Mask = "(00) 00000-0000";
+            this.mtbCel.Name = "mtbCel";
+            this.mtbCel.Size = new System.Drawing.Size(109, 20);
+            this.mtbCel.TabIndex = 22;
+            this.mtbCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 450);
+            this.Controls.Add(this.mtbCel);
+            this.Controls.Add(this.mtbTel);
             this.Controls.Add(this.cbxUF);
             this.Controls.Add(this.cbxSexo);
             this.Controls.Add(this.btnCancelar);
@@ -244,9 +281,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label4);
@@ -258,6 +293,7 @@
             this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Cadastro";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -272,9 +308,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label label7;
@@ -287,6 +321,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbxSexo;
         private System.Windows.Forms.ComboBox cbxUF;
+        private System.Windows.Forms.MaskedTextBox mtbTel;
+        private System.Windows.Forms.MaskedTextBox mtbCel;
     }
 }
 
