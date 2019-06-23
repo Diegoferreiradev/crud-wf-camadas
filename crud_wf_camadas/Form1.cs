@@ -33,26 +33,40 @@ namespace crud_wf_camadas
             cbxUF.SelectedIndex = -1;
             txtCidade.Clear();
             txtBairro.Clear();
+            txtNome.BackColor = Color.White;
+            mtbCel.BackColor = Color.White;
+            txtBairro.BackColor = Color.White;
         }
 
         private void Salvar(Funcionario funcionario)
         {
             FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
 
-            funcionario.Nome = txtNome.Text;
-            funcionario.Sexo = cbxSexo.Text;
-            funcionario.Telefone = mtbTel.Text;
-            funcionario.Celular = mtbCel.Text;
-            funcionario.Endereco = txtEndereco.Text;
-            funcionario.Bairro = txtBairro.Text;
-            funcionario.Cidade = txtCidade.Text;
-            funcionario.Estado = cbxUF.Text;
+            if (txtNome.Text.Trim() == string.Empty || mtbCel.Text.Trim() == string.Empty || txtBairro.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Preencha os Campos obrigatórios!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNome.BackColor = Color.Beige;
+                mtbCel.BackColor = Color.Beige;
+                txtBairro.BackColor = Color.Beige;
+            }
+            else
+            {
+                funcionario.Nome = txtNome.Text;
+                funcionario.Sexo = cbxSexo.Text;
+                funcionario.Telefone = mtbTel.Text;
+                funcionario.Celular = mtbCel.Text;
+                funcionario.Endereco = txtEndereco.Text;
+                funcionario.Bairro = txtBairro.Text;
+                funcionario.Cidade = txtCidade.Text;
+                funcionario.Estado = cbxUF.Text;
 
-            funcionarioBLL.Salvar(funcionario);
+                funcionarioBLL.Salvar(funcionario);
 
-            MessageBox.Show("O Funcionário foi salvo com Sucesso!");
-            LimparDados();
-            Listar();
+                MessageBox.Show("O Funcionário foi salvo com Sucesso!");
+                LimparDados();
+                Listar();
+            }
+
         }
 
 
@@ -68,21 +82,32 @@ namespace crud_wf_camadas
         {
             FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
 
-            funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
-            funcionario.Nome = txtNome.Text;
-            funcionario.Sexo = cbxSexo.Text;
-            funcionario.Telefone = mtbTel.Text;
-            funcionario.Celular = mtbCel.Text;
-            funcionario.Endereco = txtEndereco.Text;
-            funcionario.Bairro = txtBairro.Text;
-            funcionario.Cidade = txtCidade.Text;
-            funcionario.Estado = cbxUF.Text;
+            if (txtNome.Text.Trim() == string.Empty || mtbCel.Text.Trim() == string.Empty || txtBairro.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Preencha os Campos obrigatórios!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNome.BackColor = Color.Beige;
+                mtbCel.BackColor = Color.Beige;
+                txtBairro.BackColor = Color.Beige;
+            }
+            else
+            {
+                funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
+                funcionario.Nome = txtNome.Text;
+                funcionario.Sexo = cbxSexo.Text;
+                funcionario.Telefone = mtbTel.Text;
+                funcionario.Celular = mtbCel.Text;
+                funcionario.Endereco = txtEndereco.Text;
+                funcionario.Bairro = txtBairro.Text;
+                funcionario.Cidade = txtCidade.Text;
+                funcionario.Estado = cbxUF.Text;
 
-            funcionarioBLL.Editar(funcionario);
+                funcionarioBLL.Editar(funcionario);
 
-            MessageBox.Show("Dados Atualizados com Sucesso!");
-            LimparDados();
-            Listar();
+                MessageBox.Show("Dados Atualizados com Sucesso!");
+                LimparDados();
+                Listar();
+            }
+            
         }
 
 
@@ -136,6 +161,11 @@ namespace crud_wf_camadas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimparDados();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
