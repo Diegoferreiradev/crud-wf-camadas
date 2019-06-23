@@ -100,5 +100,29 @@ namespace crud_wf_camadas.DAO
                 FecharConexao();
             }
         }
+
+
+        public void Excluir(Funcionario funcionario)
+        {
+            try
+            {
+                AbrirConexao();
+
+                comando = new MySqlCommand("DELETE FROM funcionario WHERE id_funcionario = @id", conexao);
+
+                comando.Parameters.AddWithValue("@id", funcionario.IdFuncionario);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
     }
 }

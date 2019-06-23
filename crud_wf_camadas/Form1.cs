@@ -21,6 +21,20 @@ namespace crud_wf_camadas
             Listar();
         }
 
+
+        private void LimparDados()
+        {
+            txtCodigo.Clear();
+            txtNome.Clear();
+            mtbTel.Clear();
+            mtbCel.Clear();
+            cbxSexo.SelectedIndex = -1;
+            txtEndereco.Clear();
+            cbxUF.SelectedIndex = -1;
+            txtCidade.Clear();
+            txtBairro.Clear();
+        }
+
         private void Salvar(Funcionario funcionario)
         {
             FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
@@ -37,6 +51,7 @@ namespace crud_wf_camadas
             funcionarioBLL.Salvar(funcionario);
 
             MessageBox.Show("O Funcionário foi salvo com Sucesso!");
+            LimparDados();
             Listar();
         }
 
@@ -66,6 +81,7 @@ namespace crud_wf_camadas
             funcionarioBLL.Editar(funcionario);
 
             MessageBox.Show("Dados Atualizados com Sucesso!");
+            LimparDados();
             Listar();
         }
 
@@ -82,6 +98,20 @@ namespace crud_wf_camadas
             Editar(funcionario);
         }
 
+
+        private void Excluir(Funcionario funcionario)
+        {
+            FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
+
+            funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
+
+            funcionarioBLL.Excluir(funcionario);
+
+            MessageBox.Show("Dados Removidos com Sucesso!");
+            LimparDados();
+            Listar();
+        }
+
         private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             txtCodigo.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
@@ -96,5 +126,16 @@ namespace crud_wf_camadas
                     
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Funcionario funcionario = new Funcionario();
+
+            Excluir(funcionario);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparDados();
+        }
     }
 }

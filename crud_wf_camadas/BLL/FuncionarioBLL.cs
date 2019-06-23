@@ -57,5 +57,18 @@ namespace crud_wf_camadas.BLL
                 throw erro;
             }
         }
+
+        public void Excluir(Funcionario funcionario)
+        {
+            try
+            {
+                funcionarioDAO.Excluir(funcionario);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
     }
 }
