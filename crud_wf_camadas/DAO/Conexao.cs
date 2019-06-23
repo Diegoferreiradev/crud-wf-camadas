@@ -7,8 +7,7 @@ namespace crud_wf_camadas.DAO
     {
         string conectar = "Server=localhost;Database=empresa;Uid=root;Pwd=;";
 
-        MySqlConnection conexao = null;
-        MySqlCommand comando = null;
+        protected MySqlConnection conexao = null;
 
 
         public void AbrirConexao()
@@ -23,10 +22,7 @@ namespace crud_wf_camadas.DAO
 
                 throw erro;
             }
-            finally
-            {
-                conexao.Close();
-            }
+
         }
 
         public void FecharConexao()
@@ -41,10 +37,8 @@ namespace crud_wf_camadas.DAO
 
                 throw erro;
             }
-            finally
-            {
-                conexao.Close();
-            }
+
         }
+
     }
 }
