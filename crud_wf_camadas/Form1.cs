@@ -49,11 +49,52 @@ namespace crud_wf_camadas
         }
 
 
+        private void Editar(Funcionario funcionario)
+        {
+            FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
+
+            funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
+            funcionario.Nome = txtNome.Text;
+            funcionario.Sexo = cbxSexo.Text;
+            funcionario.Telefone = mtbTel.Text;
+            funcionario.Celular = mtbCel.Text;
+            funcionario.Endereco = txtEndereco.Text;
+            funcionario.Bairro = txtBairro.Text;
+            funcionario.Cidade = txtCidade.Text;
+            funcionario.Estado = cbxUF.Text;
+
+            funcionarioBLL.Editar(funcionario);
+
+            MessageBox.Show("Dados Atualizados com Sucesso!");
+            Listar();
+        }
+
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Funcionario funcionario = new Funcionario();
             Salvar(funcionario);
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Funcionario funcionario = new Funcionario();
+            Editar(funcionario);
+        }
+
+        private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            txtCodigo.Text = dataGridView.CurrentRow.Cells[0].Value.ToString();
+            txtNome.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            cbxSexo.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
+            mtbTel.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
+            mtbCel.Text = dataGridView.CurrentRow.Cells[4].Value.ToString();          
+            txtEndereco.Text = dataGridView.CurrentRow.Cells[5].Value.ToString();
+            txtBairro.Text = dataGridView.CurrentRow.Cells[6].Value.ToString();
+            txtCidade.Text = dataGridView.CurrentRow.Cells[7].Value.ToString();
+            cbxUF.Text = dataGridView.CurrentRow.Cells[8].Value.ToString();         
+                    
+        }
+
     }
 }

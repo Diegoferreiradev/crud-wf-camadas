@@ -68,5 +68,37 @@ namespace crud_wf_camadas.DAO
                 FecharConexao();
             }
         }
+
+
+        public void Editar(Funcionario funcionario)
+        {
+            try
+            {
+                AbrirConexao();
+
+                comando = new MySqlCommand("UPDATE funcionario SET nome = @nome, sexo = @sexo, telefone = @telefone, celular = @celular, endereco = @endereco, bairro = @bairro, cidade = @cidade, estado = @estado WHERE id_funcionario = @id ", conexao);
+
+                comando.Parameters.AddWithValue("@id", funcionario.IdFuncionario);
+                comando.Parameters.AddWithValue("@nome", funcionario.Nome);
+                comando.Parameters.AddWithValue("@sexo", funcionario.Sexo);
+                comando.Parameters.AddWithValue("@telefone", funcionario.Telefone);
+                comando.Parameters.AddWithValue("@celular", funcionario.Celular);
+                comando.Parameters.AddWithValue("@endereco", funcionario.Endereco);
+                comando.Parameters.AddWithValue("@bairro", funcionario.Bairro);
+                comando.Parameters.AddWithValue("@cidade", funcionario.Cidade);
+                comando.Parameters.AddWithValue("@estado", funcionario.Estado);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
     }
 }

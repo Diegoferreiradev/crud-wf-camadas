@@ -43,5 +43,19 @@ namespace crud_wf_camadas.BLL
                 throw erro;
             }
         }
+
+
+        public void Editar(Funcionario funcionario)
+        {
+            try
+            {
+                funcionarioDAO.Editar(funcionario);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
     }
 }
