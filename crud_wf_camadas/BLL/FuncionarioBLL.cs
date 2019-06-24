@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using crud_wf_camadas.DAO;
 using crud_wf_camadas.Model;
-using crud_wf_camadas.DAO;
+using System;
 using System.Data;
 
 namespace crud_wf_camadas.BLL
