@@ -128,13 +128,21 @@ namespace crud_wf_camadas
         {
             FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
 
-            funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
+            if (txtCodigo.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Selecione um registro para poder removê-lo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
 
-            funcionarioBLL.Excluir(funcionario);
+                funcionarioBLL.Excluir(funcionario);
 
-            MessageBox.Show("Dados Removidos com Sucesso!");
-            LimparDados();
-            Listar();
+                MessageBox.Show("Dados Removidos com Sucesso!");
+                LimparDados();
+                Listar();
+            }
+     
         }
 
         private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
