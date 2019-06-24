@@ -132,6 +132,10 @@ namespace crud_wf_camadas
             {
                 MessageBox.Show("Selecione um registro para poder removê-lo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (MessageBox.Show("Deseja realmente excluir esse registro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+
+            }
             else
             {
                 funcionario.IdFuncionario = Convert.ToInt32(txtCodigo.Text);
