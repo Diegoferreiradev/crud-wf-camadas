@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using crud_wf_camadas.BLL;
 using crud_wf_camadas.Model;
-using crud_wf_camadas.BLL;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace crud_wf_camadas
 {
@@ -75,6 +69,21 @@ namespace crud_wf_camadas
             FuncionarioBLL funcionarioBLL = new FuncionarioBLL();
 
             dataGridView.DataSource = funcionarioBLL.Listar();
+
+            dataGridView.Columns[0].HeaderText = "ID";
+            dataGridView.Columns[1].HeaderText = "Nome";
+            dataGridView.Columns[2].HeaderText = "Sexo";
+            dataGridView.Columns[3].HeaderText = "Tel.Fixo";
+            dataGridView.Columns[4].HeaderText = "Celular";
+            dataGridView.Columns[5].HeaderText = "Endereço";
+            dataGridView.Columns[6].HeaderText = "Bairro";
+            dataGridView.Columns[7].HeaderText = "Cidade";
+            dataGridView.Columns[8].HeaderText = "UF";
+
+            dataGridView.Columns[0].Width = 30;
+            dataGridView.Columns[1].Width = 150;
+            dataGridView.Columns[2].Width = 35;
+            dataGridView.Columns[8].Width = 30;
         }
 
 
